@@ -365,6 +365,11 @@ the '@sysconfdir@/fwknop/fwknopd.conf' file for additional details.
     of appending them to the end of the chain. This causes newly created rules to
     have precedence over older ones.
 
+*ENABLE_DELETE_OLD_RULES* '<Y/N>'::
+    For systems running iptables, delete old rules by IP_ADDRESS regardless of expiration time.
+    This prevents multiple same rules if fwknop client ``bombarding`` with new packet
+    requests before expiration of older ones.
+
 *ENABLE_NAT_DNS* '<Y/N>'::
     Allow fwknopd to resolve hostnames in NAT access messages.
 
