@@ -96,6 +96,8 @@
 #define DEF_GPG_HOME_DIR                "/root/.gnupg"
 #define DEF_ENABLE_X_FORWARDED_FOR      "N"
 #define DEF_ENABLE_RULE_PREPEND         "N"
+#define DEF_ENABLE_DELETE_OLD_RULES     "N"
+
 #define DEF_ENABLE_NAT_DNS              "Y"
 #ifdef  GPG_EXE
   #define DEF_GPG_EXE                   GPG_EXE

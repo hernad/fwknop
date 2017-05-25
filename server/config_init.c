@@ -885,7 +885,7 @@ validate_options(fko_srv_options_t *opts)
 
     /* DELETE firewall rules from the same IP address */
         if(opts->config[CONF_ENABLE_DELETE_OLD_RULES] == NULL)
-            set_config_entry(opts, CONF_ENABLE_DELETE_OLD_RULES, DEF_ENABLE_RULE_DELETE);
+            set_config_entry(opts, CONF_ENABLE_DELETE_OLD_RULES, DEF_ENABLE_DELETE_OLD_RULES);
 
     /* Prepend firewall rules*/
     if(opts->config[CONF_ENABLE_RULE_PREPEND] == NULL)
