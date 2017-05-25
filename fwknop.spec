@@ -142,8 +142,8 @@ fi
 %config(noreplace) %attr(0600,root,root) %{_sysconfdir}/fwknop/access.conf
 
 %changelog
-* Wed Jun 08 2016 <mbr@cipherdyne.org> - 2.6.9
-- fwknop-2.6.9 release.
+* Wed Jun 08 2016 <mbr@cipherdyne.org> - 2.6.9-hernad
+- fwknop-2.6.9-hernad release.
 - Bumped libfko version to 3.0.0 to account for SHA3 hash support. This
   conforms to libtool convensions, e.g.
   http://www.delorie.com/gnu/docs/libtool/libtool_35.html
