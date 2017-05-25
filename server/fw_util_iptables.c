@@ -1631,12 +1631,15 @@ process_spa_request(const fko_srv_options_t * const opts,
         */
 
        if (strncasecmp(opts->config[CONF_ENABLE_DELETE_OLD_RULES], "Y", 1) == 0) {
+
           // iptables -L -v --line-numbers | grep ACCEPT.*192.168.168.194.*_exp_ | awk '{ print $1 }' | sort -nr | xargs -n 1 sudo iptables -D FWKNOP_INPUT
           snprintf(cmd_buf, CMD_BUFSIZE-1,
                    "%s -L -v --line-numbers | grep ACCEPT.*%s.*_exp_ | awk '{ print $1 }' | sort -nr | xargs -n 1 %s -D %s",
                     opts->fw_config->fw_command, spadat->use_src_ip, opts->fw_config->fw_command, in_chain);
           res = run_extcmd(cmd_buf, err_buf, CMD_BUFSIZE, WANT_STDERR, NO_TIMEOUT, &pid_status, opts);
-            }
+          log_msg(LOG_DEBUG, "ENABLE_DELETE_OLD_RULES CMD: '%s' (res: %d, err: %s)",
+              cmd_buf, res, err_buf);
+        }
 
         while(ple != NULL)
         {
